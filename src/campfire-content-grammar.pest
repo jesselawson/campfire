@@ -1,0 +1,32 @@
+para = { ANY* ~ NEWLINE{2} }
+expr = _{ img | link | campfire_link | mark }
+text = { (!(expr) ~ ANY)+ }
+code = _{ 
+  PUSH("```") ~ code_block_lang ~ code_block_value ~ PUSH("```")
+}
+code_block_lang = { ASCII_ALPHA* }
+code_block_value = { (!(PEEK) ~ ANY)* }
+code_inline_value = { (!(PEEK | NEWLINE) ~ ANY)*  }
+// write the mark_tag and the text
+mark_tag = @{
+  "**"
+  | "*"
+  | "~~"
+  | "__"
+  | "_"
+  | "`"
+}
+img_start = @{ "!" }
+img = ${ img_start ~ link }
+campfire_link = ${ campfire_link_label ~ campfire_link_target }
+campfire_link_label = { "%{" ~ (!("}" | NEWLINE) ~ ANY)* ~ "}" } 
+campfire_link_target = { "(" ~ (!(")" | NEWLINE) ~ ANY)* ~ ")" }
+
+link = ${ link_string ~ link_url }
+link_string = { "[" ~ (!("]" | NEWLINE) ~ ANY)* ~ "]" } 
+link_url = { "(" ~ (!(")" | NEWLINE) ~ ANY)* ~ ")" }
+mark = _{ PUSH(mark_tag) ~ string ~ PUSH(mark_tag) }
+string = ${ (!(PEEK | NEWLINE) ~ ANY)* }
+
+line = _{ expr | text | NEWLINE }
+content = { SOI ~ line* ~ EOI }

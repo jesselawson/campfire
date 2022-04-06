@@ -1,0 +1,25 @@
+$set @title = Campfire Demo
+$set @card_html_tag = article
+
+$begin start
+
+If I link to the %{gray}(gray) card, then the %{gray}(gray) card again... 
+
+$end
+
+$begin black
+
+Great! Now select your favorite **number**:
+
+$end 
+$begin gray
+
+ What happens if I %{link to myself}(gray)?
+
+$end
+
+$begin dark_gray
+
+asdf
+
+$end
