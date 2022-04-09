@@ -137,6 +137,25 @@ $begin start
 
 Think of `$begin start` as the `main` entrypoint into your Campfire experience.
 
+Next, you'll write Markdown and, when needed, Campfire expressions. There's one 
+Campfire expression implemented right now, and that is the **link** (which allows 
+you to link to and reveal other cards).
+
+The end of the card is marked with `$end`. 
+
+Here's a "Hello world" card: 
+
+```campfire
+// start.campfire
+
+$begin start
+
+Hello, world!
+
+$end
+
+```
+
 Currently, Campfire only supports having one file named `start.campfire`.
 ## Set commands
 
