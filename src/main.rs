@@ -22,34 +22,24 @@ fn main() {
     };
 
     let mut output_dir:String = String::from("project");
+    
+    let target = match std::env::args().nth(3) {
+      Some(str) => str,
+      _ => {String::from("docs")} // Default to "project" if no string is provided
+    };
+
 
     if !command.is_none() {
       match command.as_deref() {
          Some("build") => { 
-            if !flag.is_empty() {
-              if flag.eq("--html_files") {
-                /*match do_html_files_build() {
-                  Ok(()) => { println!("🪵🔥🪵 HTML Files Compilation successful!") },
-                  Err(some_error) => {
-                    campfire_error(some_error);
-                  }
-                }*/
-              } else if flag.eq("--output_dir"){
-                output_dir = match std::env::args().nth(3) {
-                  Some(dir_str) => dir_str,
-                  _ => {String::from("project")} // Default to "project" if no string is provided
-                };
-
-              } else {
-
-              }
-            } else {
+           if String::eq(&flag, "--output_dir") {
+             output_dir = target;
+           }
               match do_build(output_dir) {
                 Ok(()) => { println!("🪵🔥🪵 HTML + JS Compilation successful!") },
                 Err(some_error) => {
                   campfire_error(some_error);
-              }
-            } 
+              } 
          }
         },
          Some("publish") => { do_publish() },

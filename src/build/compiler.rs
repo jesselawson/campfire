@@ -205,7 +205,7 @@ pub fn build_campfire_project_dir(document:&mut Document) -> Result<(),CampfireE
     {  // Write to index.html
         let mut filepath = String::new();
         filepath.push_str(&document.output_dir);
-        filepath.push_str("index.html");
+        filepath.push_str("/index.html");
 
         let path = std::path::Path::new(&filepath);
         let prefix = path.parent().unwrap_or_else(|| std::path::Path::new(&document.output_dir));
@@ -232,7 +232,7 @@ pub fn build_campfire_project_dir(document:&mut Document) -> Result<(),CampfireE
     {  // Write campfire.js
         let mut filepath = String::new();
         filepath.push_str(&document.output_dir);
-        filepath.push_str("index.html");
+        filepath.push_str("/campfire.js");
 
         let path = std::path::Path::new(&filepath);
         let prefix = path.parent().unwrap_or_else(|| std::path::Path::new(&document.output_dir));
