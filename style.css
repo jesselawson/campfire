@@ -1,0 +1,54 @@
+
+body {
+    margin-bottom: 33vh;
+}
+
+#campfire-card-container {
+    width: 600px;
+    margin: auto;
+}   
+
+/*.__oldcampfirecard {
+    border: 1px solid #333fff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+    margin-bottom: 1.31em;
+    padding: 1.11em;
+}*/
+
+.campfire-card {
+    
+    visibility: hidden;
+    transition: opacity .71s;
+    border-radius: 8px;
+    
+    opacity: 0;
+}
+
+.campfire-card-label {
+    text-color: blue;
+    text-decoration: underline;
+    transition: text-color .5s;
+    transition: height .5s;
+    cursor: pointer;
+}
+
+.start-card {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cf-clicked {
+    text-color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+}
+
+.cf-fade-in {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cf-fade-out {
+    visibility: hidden;
+    opacity: 0;
+}
