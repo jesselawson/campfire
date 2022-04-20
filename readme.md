@@ -21,6 +21,8 @@ Use cases include, but are not limited to:
 * Topic exploration and presentation
 
 **Currently in working alpha.** Things are subject to change, and that's okay. 
+
+Check out the [demo](https://jesselawson.github.io/campfire/).
 ## Current features (and limitations)
 
 **Marketing fluff**
@@ -28,6 +30,7 @@ Use cases include, but are not limited to:
 * Define your cards in one file (`start.campfire`)
 * Write in Markdown (uses a custom Markdown-compatable syntax)
 * Lightning-fast compilation to a static site
+* Set output dir with `campfire build --output_dir <some_dir>`
 
 **Reality**
 

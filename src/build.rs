@@ -13,7 +13,7 @@ use error::*;
 mod compiler;
 mod parser;
 
-pub fn do_build() -> Result<(), error::CampfireError> {
+pub fn do_build(output_dir:String) -> Result<(), error::CampfireError> {
   println!("Building Campfire project...");
 
   let main_file_name = String::from("start.campfire");
@@ -37,6 +37,8 @@ pub fn do_build() -> Result<(), error::CampfireError> {
       return Err(some_error)
     }
   };
+
+  document.output_dir = output_dir;
 
   println!("Finished parsing file");
 

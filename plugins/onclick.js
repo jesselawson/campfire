@@ -1,3 +1,5 @@
+// This is defined in plugins/onclick.js
+// Customize functionality yourself!
 link_element().classList.add('cf-clicked');
 
 campfire_card_container().insertAdjacentHTML('beforeend', target_card_html_content());

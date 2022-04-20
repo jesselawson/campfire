@@ -10,6 +10,7 @@ pub struct LinkIndexItem {
 
 pub struct Document {
     pub filename: String,
+    pub output_dir: String,
     pub header_content: String,
     pub body_content: String,
     pub footer_content: String,

@@ -203,8 +203,12 @@ pub fn compile_campfire_cards_into_document(document:&mut Document) -> Result<()
 pub fn build_campfire_project_dir(document:&mut Document) -> Result<(),CampfireError> {
   
     {  // Write to index.html
-        let path = std::path::Path::new("project/index.html");
-        let prefix = path.parent().unwrap_or_else(|| std::path::Path::new("project"));
+        let mut filepath = String::new();
+        filepath.push_str(&document.output_dir);
+        filepath.push_str("/index.html");
+
+        let path = std::path::Path::new(&filepath);
+        let prefix = path.parent().unwrap_or_else(|| std::path::Path::new(&document.output_dir));
 
         match std::fs::create_dir_all(prefix) {
         Ok(_) => {  },
@@ -226,8 +230,12 @@ pub fn build_campfire_project_dir(document:&mut Document) -> Result<(),CampfireE
     // TODO: Create a CLI flag that lets you determine how this is done (e.g., 
     // something like campfire build --singlefile (to inject it in a script tag in index.html))
     {  // Write campfire.js
-        let path = std::path::Path::new("project/campfire.js");
-        let prefix = path.parent().unwrap_or_else(|| std::path::Path::new("project"));
+        let mut filepath = String::new();
+        filepath.push_str(&document.output_dir);
+        filepath.push_str("/campfire.js");
+
+        let path = std::path::Path::new(&filepath);
+        let prefix = path.parent().unwrap_or_else(|| std::path::Path::new(&document.output_dir));
 
         match std::fs::create_dir_all(prefix) {
             Ok(_) => {  },
