@@ -104,6 +104,8 @@ pub fn parse_campfire_file_as_string(filename: &String, file_string: &String) ->
         // The resultant html file
         filename: String::from("index.html"),
 
+        output_dir: String::from("build"),
+
         // Either default contents (in document.rs) or the contents of a header.html file
         header_content: String::new(),
 
