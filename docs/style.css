@@ -1,6 +1,5 @@
-#campfire-card-container {
-   
-}   
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
 
 .campfire-card {
     padding: .87em;

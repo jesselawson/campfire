@@ -260,6 +260,10 @@ things:
 
 Feel free to clone, tinker, then open a pull request. 
 
+To build the docs:
+
+`cargo run build --output_dir docs`
+
 # Ideas
 
 - Group links together so that when one is clicked, the rest are no longer available. 
