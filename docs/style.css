@@ -1,4 +1,4 @@
-.campfire-card-container {
+#campfire-card-container {
     width: 600px;
     margin: auto;
 }   
@@ -17,11 +17,18 @@
     transition: text-color .5s;
 }
 
+.start-card {
+    display: block;
+    opacity: 1;
+}
+
 .cf-clicked {
    text-color: inherit;
    text-decoration: inherit;
 }
 
 .cf-fade-in {
-
+    transition: opacity .5s;
+    opacity: 1;
+    display: inherit;
 }
