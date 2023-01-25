@@ -3,26 +3,18 @@ guaranteed._
 
 # Campfire
 
-This project is a proof-of-concept compiler for the Campfire language. It 
-takes a `.campfire` file and compiles it to a static website (`index.html`, 
-`campfire.js`, and an optional `style.css`).
-
-The Campfire language is basically GitHub-flavored Markdown organized 
-into cards that can be linked to and from one another. Every time you click 
-a link to a specific card, a new instance of that card is revealed on the screen.
-
-Campfire was originally designed to build competency-based digital textbooks, 
-but you're not limited to only educational content. It naturally encourages 
-exploration and is useful for both mutable and immutable narratives. 
-
-Use cases include, but are not limited to:
-* Interactive educational content, especially for competency-based learning 
-* Interactive fiction (e.g., CYOA and other mutable narrative IF)
-* Topic exploration and presentation
+Welcome to the Campfire storytelling language project! This is a proof-of-concept 
+compiler that allows you to turn your ideas into interactive, dynamic web content. 
+The Campfire language is based on GitHub-flavored Markdown and is organized into cards 
+that can be linked to and from one another. Each card represents a different piece 
+of content and when a user clicks on a link, a new instance of that card is revealed 
+on the screen. This creates a unique and engaging experience for your audience, 
+encouraging exploration and interaction.
 
 **Currently in working alpha.** Things are subject to change, and that's okay. 
 
 Check out the [demo](https://jesselawson.github.io/campfire/).
+
 ## Current features (and limitations)
 
 **Marketing fluff**
@@ -48,6 +40,10 @@ think of this as a sensible default rather than a restriction.
 # Quickstart
 
 **As a user**
+
+This project is a proof-of-concept compiler for the Campfire language. It 
+takes a `.campfire` file and compiles it to a static website (`index.html`, 
+`campfire.js`, and an optional `style.css`).
 
 1. Download the latest release, and extract the `campfire` executable to a directory 
 in your path. 
